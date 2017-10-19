@@ -12,6 +12,8 @@ import fs from 'fs';
 import webpackStream from 'webpack-stream';
 import webpack2 from 'webpack';
 import named from 'vinyl-named';
+import rsync from 'gulp-rsync';
+
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -144,16 +146,17 @@ function reload(done) {
     done();
 }
 //布署到正式服
-gulp.task('deploy', function() {
+gulp.task('deploy_to_server', function() {
     return gulp.src('dist/**')
-        .pipe($.rsync({
-            root: 'dist',
+        .pipe(rsync({
+            root: 'war',
             username: 'oswap',
             progress: true,
             hostname: 'gamepip.com',
-            destination: '/home/oswap/wars',
+            destination: '/home/oswap',
             //destination: '../../web_apps/inner_app',
-            exclude: ['*.swp'],
+            // exclude: ['*.swp'],
+            // chmod: "ugo=rwX",
             incremental: true
         }));
 });

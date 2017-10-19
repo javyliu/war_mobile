@@ -7,6 +7,7 @@ window.$ = $;
 // If you want to pick and choose which modules to include, comment out the above and uncomment
 // the line below
 import './lib/foundation-explicit-pieces';
+// import videojs from 'video.js';
 
 
 // $(document).foundation();
@@ -22,14 +23,12 @@ function resize() {
     }
 }
 $(function() {
-    // console.log("video loaded");
-
-    // var _videoHeight = $("video").height();
-    // 
-    // $(".mask img").height(_videoHeight);
-    // $("video").on("load", function() {
-    //     console.log("video loaded");
-    // })
+    // var myPlayer = videojs('my_video');
+    // videojs("my_video").ready(function() {
+    //     // var myPlayer = this;
+    //     // myPlayer.play();
+    //     console.log("asdfasdf");
+    // });
     resize();
 
 });

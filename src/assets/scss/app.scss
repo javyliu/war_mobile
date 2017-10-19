@@ -1,6 +1,7 @@
 @charset 'utf-8';
 @import 'settings';
 @import 'foundation';
+// @import 'video-js.min';
 // @import 'motion-ui';
 // @include foundation-global-styles;
 @include foundation-grid;
@@ -99,6 +100,7 @@ body {
     width: 100%;
     img {
         width: 100%;
+        max-width: 488px;
         vertical-align: top;
     }
 }
