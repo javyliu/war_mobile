@@ -48,6 +48,10 @@
 // @include foundation-prototype-classes;
 // @include motion-ui-transitions;
 // @include motion-ui-animations;
+html {
+    overflow: hidden;
+}
+
 body {
     background: #111;
     margin: 0;
