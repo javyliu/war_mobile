@@ -149,15 +149,15 @@ function reload(done) {
 gulp.task('deploy_to_server', function() {
     return gulp.src('dist/**')
         .pipe(rsync({
-            root: 'war',
-            username: 'oswap',
-            progress: true,
-            hostname: 'gamepip.com',
-            destination: '/home/oswap',
-            //destination: '../../web_apps/inner_app',
-            // exclude: ['*.swp'],
-            // chmod: "ugo=rwX",
-            incremental: true
+          root: 'dist',
+          username: 'oswap',
+          progress: true,
+          hostname: 'gamepip.com',
+          destination: '/home/oswap/wars/',
+          //destination: '../../web_apps/inner_app',
+          // exclude: ['*.swp'],
+          // chmod: "ugo=rwX",
+          incremental: true
         }));
 });
 
